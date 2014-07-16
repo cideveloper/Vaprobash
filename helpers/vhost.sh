@@ -46,7 +46,7 @@ cat <<- _EOF_
 
     DocumentRoot $DocumentRoot
 
-    ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000$DocumentRoot/$1
+    #ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000$DocumentRoot/$1
 
     <Directory $DocumentRoot>
         Options -Indexes +FollowSymLinks +MultiViews
@@ -78,7 +78,7 @@ cat <<- _EOF_
 
     DocumentRoot $DocumentRoot
 
-    ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000$DocumentRoot/$1
+    #ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000$DocumentRoot/$1
 
     <Directory $DocumentRoot>
         Options -Indexes +FollowSymLinks +MultiViews
@@ -177,6 +177,6 @@ else
     fi
 
     # Enable Site
-    cd /etc/apache2/sites-available/ && a2ensite ${ServerName}.conf
-    service apache2 reload
+    cd /etc/apache2/sites-available/ && sudo a2ensite ${ServerName}.conf
+    sudo service apache2 reload
 fi
